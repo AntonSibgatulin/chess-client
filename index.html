@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>Chess</title>
+    <style>
+        .enemy{
+				display:flex; position: absolute;top: 1%;left: 2%;float: left;border: 4px solid #55cdef;border-radius: 20px;
+				width: 65%;
+			} 
+        .join{
+  
+    font-size: 90%;
+    
+    text-align: center;
+    text-justify: center; 
+    border-radius: 20px 20px 20px 20px;
+background: linear-gradient(45deg, #477536, #36f552);
+    width: 20%;
+    height:80%;
+}
+a{
+  color: #fff;
+    font-size: 100%;
+ }
+a:hover{
+ text-decoration: none;
+}
+.container{
+ width:58%;
+ background-color: rgba(24, 33, 52, 0.7);
+ margin: 10px auto 0 auto;
+ text-align: center;
+    border-radius: 20px 20px 20px 20px;
+ box-shadow: 0 -5px 0 #3adbfd;
+ padding-bottom: 0px;
+}
+.container .tes{
+ width:60px;
+ height:60px;
+ margin: -30px 0 30px 0;
+ border: 5px solid #1a394f;
+ border-radius: 50%;
+ box-shadow: 0 -5px 0 #3adbfd;
+}
+         
+          #chat{
+               margin-top: 8.5%;
+            position: absolute;
+            margin-left: 60%;
+             width: 35%;
+            height: 74%;
+              border-radius: 20px 20px 20px 20px;
+            border: 4px solid #55cdef;
+        
+        }
+        
+        #textMessage{
+            margin-top: 4%;
+            margin-left: 4%;
+            border-radius: 20px 20px 20px 20px;
+            border: 4px solid #55cdef;
+         overflow: auto;
+            width: 90%;
+            height: 75%;
+        }
+        #boardlistview{
+            margin-left: 2.5%;
+            border-radius: 20px 20px 20px 20px;
+            width: 55%;
+            height: 75%;
+            overflow-y:auto;
+            background-color: #d5cbdf4d;
+            position: absolute;
+            margin-top: 8.5%;
+        }    
+           .boardList{
+height:8%; 
+               align-items: center;
+    margin-right: 3px;
+    margin-left:3px;
+    border-radius: 10px 10px 10px 10px;
+    margin-bottom: 8px; 
+    border: 3px solid #2bd2e4;
+	background-color: white;
+width: 98%;
+    
+}
+            .container .ter{
+ width:240px;
+ height:120px;
+ margin: -60px 0 30px 0;
+             
+ border: 5px solid #1a394f;
+ border-radius: 50%;
+ box-shadow: 0 -5px 0 #3adbfd;
+}
+
+input[type="text"],input[type="password"]{
+ width: 90%;
+ height:40px;
+  border-radius: 20px 20px 20px 20px;    
+ font-size: 100%;
+ margin-bottom: 15px;
+ border-radius: 4px;
+ padding-left: 40px;
+}
+.dws-input input:hover{
+ box-shadow: 0 0 6px 3px rgba(58, 219, 253, 0.35);
+}
+ .exits2 {
+	position: absolute;
+    right: 15%;
+ padding: 7px 20px;
+     top:1.5%;
+ margin: 5px 0 20px 0;
+ font-size: 150%;
+ color: #fff;
+ background-color: #2ca8c6;
+ border: none;
+    border-radius: 9px 9px 9px 9px;
+ border-bottom: 4px solid #6ee9fd;
+ cursor: pointer;
+}    
+.dws-submit {
+	
+ padding: 7px 20px;
+ margin: 5px 0 20px 0;
+ font-size: 150%;
+ color: #fff;
+ background-color: #2ca8c6;
+ border: none;
+    border-radius: 9px 9px 9px 9px;
+ border-bottom: 4px solid #6ee9fd;
+ cursor: pointer;
+}
+			
+			.dws-submits {
+	
+ padding: 2% 4%;
+ margin: 5px 0 20px 0;
+position: fixed;
+right:6px;
+top:0.16%;
+ font-size: 113%;
+ color: #fff;
+ background-color: #2ca8c6;
+ border: none;
+    border-radius: 9px 14px 9px 9px;
+ border-bottom: 4px solid #6ee9fd;
+ cursor: pointer;
+}
+			.dws-submitready {
+			
+	position:absolute;
+                margin-top: 30%;
+                margin-left: 25%;
+ padding: 0.9% 0.8%;
+top: 5%;
+ font-size: 150%;
+ color: #fff;
+ background-color: #2ca8c6;
+ border: none;
+    border-radius: 9px 9px 9px 9px;
+ border-bottom: 4px solid #6ee9fd;
+ cursor: pointer;
+}
+.dws-submit:hover{
+ transition: all 0.5s;
+ background: #fff;
+ color: #2c536c;
+}
+#timer{
+	position: absolute;
+bottom: 10px;
+text-align: center;
+color: #333;
+	color: red;
+	font-weight: bolder;
+font-family: fantasy;
+font-size: 65%;
+cursor: default;
+}
+
+#timer div{
+display: inline;
+}
+        .last{
+    height: 100%;
+    width: 100%;
+    background-color: red;
+    float: left;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+        
+.end{
+    height: 100%;
+    width: 100%;
+    background-color: green;
+    float: left;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+			
+			#timerGameEnemy{
+	position: relative;
+margin-top:20%;
+text-align: center;
+color: #333;
+	color: red;
+	font-weight: bolder;
+font-family: fantasy;
+font-size: 65%;
+cursor: default;
+}
+
+#timerGameEnemy div{
+display: inline;
+}
+			
+			
+			
+						#timerGameMy{
+	position: relative;
+margin-top: 20%;
+text-align: center;
+color: #333;
+	color: red;
+	font-weight: bolder;
+font-family: fantasy;
+font-size: 65%;
+cursor: default;
+}
+						#status{
+	position: relative;
+margin-top: 20%;
+text-align: center;
+color: #333;
+	color: red;
+	font-weight: bolder;
+font-family: fantasy;
+font-size: 65%;
+cursor: default;
+}
+
+		.createtable{
+    margin-left:0%;
+    font-size: 90%;
+    margin-top: 0%; 
+    text-align: center;
+    text-justify: center; 
+    border-radius: 10px 10px 10px 10px;
+  background: linear-gradient(45deg, #477536, #36f552);
+    width: 5%;
+    height:100%;
+}	
+#timerGameMy div{
+display: inline;
+}
+.dws-input::before{
+ font-family: "FontAwesome";
+ content: "\f007";
+ position: absolute;
+ font-size: 100%;
+ padding: 3% 0 0 7px;
+ color: #2c536c;
+}
+.dws-input:nth-child(2)::before{
+content: "\f023";
+    
+}
+.dws-input:hover::before{
+ color: #319ebc;
+ transition: all 0.3s;
+}
+.dws-social i{
+ color: #fff;
+ font-size: 20px;
+ width: 20px;
+ padding: 10px;
+}
+        
+        #auth,#reg,#captcha{
+            margin-top: 10%;
+        }
+        
+.dws-social i:hover{
+ background-color: #fff;
+ color: #1a394f;
+ border-radius: 5px;
+ cursor: pointer;
+}
+        #exitB:hover{
+            background-color: #206e84;
+        }
+        #panelGame{
+            display: flex;float:left;
+        
+            background-color: #55cdef;
+            width: 100%;
+            border-radius: 0px 0px 20px 20px;
+            height: 1.5%;
+        }
+.board{
+	position: absolute;
+    margin-top: 7.5%;
+    width: 45%;
+    height:  72%;
+      border: 10px solid #55cdef;
+    border-radius: 10px 10px 10px 10px;
+     margin-left: 4%;
+	
+}
+      
+body{
+margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+}
+.block{
+  
+    float: left;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        width: 12.5%;
+    height:12.5%;
+    
+    }
+.black{
+    background-color: #b58863;
+}
+.white{
+    background-color: #f0d9b5;
+}
+.figure{
+    font-size: 60px;
+    cursor:pointer;
+}
+	</style>
+</head>
+<body>
+<script>
+	</script>
+<script src="http://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script>
+! function(a) {
+    function f(a, b) {
+        if (!(a.originalEvent.touches.length > 1)) {
+            a.preventDefault();
+            var c = a.originalEvent.changedTouches[0],
+                d = document.createEvent("MouseEvents");
+            d.initMouseEvent(b, !0, !0, window, 1, c.screenX, c.screenY, c.clientX, c.clientY, !1, !1, !1, !1, 0, null), a.target.dispatchEvent(d)
+        }
+    }
+    if (a.support.touch = "ontouchend" in document, a.support.touch) {
+        var e, b = a.ui.mouse.prototype,
+            c = b._mouseInit,
+            d = b._mouseDestroy;
+        b._touchStart = function(a) {
+            var b = this;
+            !e && b._mouseCapture(a.originalEvent.changedTouches[0]) && (e = !0, b._touchMoved = !1, f(a, "mouseover"), f(a, "mousemove"), f(a, "mousedown"))
+        }, b._touchMove = function(a) {
+            e && (this._touchMoved = !0, f(a, "mousemove"))
+        }, b._touchEnd = function(a) {
+            e && (f(a, "mouseup"), f(a, "mouseout"), this._touchMoved || f(a, "click"), e = !1)
+        }, b._mouseInit = function() {
+            var b = this;
+            b.element.bind({
+                touchstart: a.proxy(b, "_touchStart"),
+                touchmove: a.proxy(b, "_touchMove"),
+                touchend: a.proxy(b, "_touchEnd")
+            }), c.call(b)
+        }, b._mouseDestroy = function() {
+            var b = this;
+            b.element.unbind({
+                touchstart: a.proxy(b, "_touchStart"),
+                touchmove: a.proxy(b, "_touchMove"),
+                touchend: a.proxy(b, "_touchEnd")
+            }), d.call(b)
+        }
+    }
+}(jQuery);
+
+
+
+
+	var connection = new WebSocket('ws://localhost:4444');
+
+
+
+
+	  function joined(e){
+   
+        connection.send("game;join;"+e.id+";"+get_cookie("db")+";"+get_cookie("hash"));
+    }
+    var updates = '<div style="display:flex;width:25%;margint-top:20%;font-size:95%;align-item:center;justify-content: center;align-items: center;">name</div><div style="display:flex;width:25%;margint-top:20%;font-size:95%;align-item:center;justify-content: center;align-items: center;">stavka$</div> <div style="width:15%;font-size:95%;align-items: center;display:flex;">numberpeop </div><div style="font-size:95%;width:12%;display:flex;align-items:center;">long min </div> <div id="joined" value="cid" class="join"  style="display: flex;align-items: center;justify-content: center;" onClick="joined(this)"><dt>Войти</div>';
+var boardi = '  <div  id ="sid" onClick="onShow(this)" style="float:left;display:flex;" class="boardList"><div style="display:flex;width:25%;margint-top:20%;font-size:95%;align-item:center;justify-content: center;align-items: center;">name</div><div style="display:flex;width:25%;margint-top:20%;font-size:95%;align-item:center;justify-content: center;align-items: center;">stavka$</div> <div style="width:15%;font-size:95%;align-items: center;display:flex;">numberpeop </div><div style="font-size:95%;width:12%;display:flex;align-items:center;">long min </div> <div id="joined" value="cid" class="join"  style="display: flex;align-items: center;justify-content: center;" onClick="joined(this)"><dt>Войти</div> </div>';
+ var str = '<div id="joined" value="cid" class="join"  style="display: flex;align-items: center;justify-content: center;" onClick="joined(this)"><dt>Войти</div>';
+   
+    //str.replace('joined',e.id)
+     var touch = new Array();
+var divBlock = '<div id = "s$coord" class = "block $color"></div>';
+var divFigure = '<div id="f$coord" class = "figure">$figure</div>';
+var map;
+	//это он тип получает строку адресную из браузера и вынеает пet pапросы к примеру ?boards=1 при использывании get['boards'] выведется цифра 1
+var get = window
+    .location
+    .search
+    .replace('?','')//удаляем всю строку до вопросительного знака
+    .split('&')//разделяем на массив от этого знака & все слова и до следуещего такого же
+    .reduce(
+        function(p,e){
+            var a = e.split('=');
+            p[ decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
+            return p;
+        },
+        {}
+    );
+    var boardfigureposition="rnbqkbnr"
+					   +"pppppppp"
+					   +"11111111"
+					   +"11111111"
+					   +"11111111"
+					   +"11R111P1"
+			           +"PPPPPP1P"
+					   +"RNBQKBN1";
+    function initBlackBoard(){
+	  for(var coord=0;coord<64;coord++){
+  
+       $('.board').append(divBlock
+                          .replace('$coord',coord)
+                          .replace('$color',isBlack(coord)?'black':'white'));
+       
+   }   
+}
+$(function(){
+    map = new Array();
+ initBoard();
+   // showFigureAt(0,'R');
+//    showFigureAt(63,'r');
+    showFigure('rnbqkbnrpppppppp11111111111111111111111111111111PPPPPPPPRNBQKBNR');
+	//переделанный fen код шахмат в 64 фимволную строку ,она нужна для воспроизведения шахмат 1 это пустое поле 
+    Move();
+   // stop(); функция моve позваляет двигать фигуры средствами ui
+});
+    
+    var Side = "none";
+window.onload = function(){ 
+document.getElementById("user").value=""+get_cookie("db");
+     document.getElementById("pass").value=""+get_cookie("hash");
+
+	function timer(){
+
+		//var hour = document.getElementById('hour').innerHTML;
+		//var minute = document.getElementById('minute').innerHTML;
+		var second = document.getElementById('second').innerHTML;
+		var end = false;
+		
+		if( second > 0 ) second--;
+		else{
+			second = 59;
+			
+			/*if( minute > 0 ) minute--;
+			else{
+				second = 59;
+				
+				if( hour > 0 ) hour--;
+				else end = true;
+			}*/
+		}
+
+		if(end){
+			clearInterval(intervalID);
+			alert("Таймер сработал!");
+		}else{
+		//	document.getElementById('hour').innerHTML = hour;
+		//	document.getElementById('minute').innerHTML = minute;
+			document.getElementById('second').innerHTML = second;
+		}
+	}
+	
+	
+	
+
+function initBoard(){
+	for(var coord=63;coord>=0;coord--){
+ 
+       $('.board').append(divBlock
+                          .replace('$coord',coord)
+                          .replace('$color',isBlack(coord)?'black':'white'));
+       
+   }
+    
+}
+	
+	function timerPlayer(){
+	var second = document.getElementById('times').innerHTML;
+		
+		if( second > 0 ) second--;
+		else{
+			second = 59;
+		}
+			document.getElementById('times').innerHTML = second;
+	}
+	//window.intervalID = setInterval(timer, 1000);
+	
+	function timerPlayer1(){
+	var second = document.getElementById('times1').innerHTML;
+		
+		if( second > 0 ) second--;
+		else{
+			second = 59;
+		}
+			document.getElementById('times1').innerHTML = second;
+	}
+//	window.intervalID = setInterval(timerPlayer1, 1000);
+//	window.interval = setInterval(timerPlayer, 1000);
+	
+}
+
+
+
+function get_cookie ( cookie_name )
+{
+  var results = document.cookie.match ( '(^|;) ?' + cookie_name + '=([^;]*)(;|$)' );
+ 
+  if ( results )
+    return ( unescape ( results[2] ) );
+  else
+    return "";
+}
+
+function  getChessFigureSide(str,side){
+	if(side=="white"){
+		switch(str){
+			case 'K':return true;
+			case 'R':return true;
+			case 'N':return true;
+			case 'P':return true;
+			case 'Q':return true;
+			case 'B':return true;
+			default:return false;
+		}
+	}else if(side=="black"){
+		switch(str){
+			case 'k':return true;
+			case 'r':return true;
+			case 'n':return true;
+			case 'p':return true;
+			case 'q':return true;
+			case 'b':return true;
+			default:return false;
+		}
+	}else
+		return false;
+}
+    function soundClick() {
+  var audio = new Audio(); // Создаём новый элемент Audio
+  audio.src = 'mes.mp3'; // Указываем путь к звуку "клика"
+  audio.autoplay = true; // Автоматически запускаем
+}
+    function onShow(e){
+      
+     var b=   document.getElementsByClassName("join")[0];
+        if(b!= null)
+            b.remove();
+         $('.panel').append(str.replace('joined',e.id));
+       
+    }
+   function moveFigure(frcoord,tocoord){
+  
+    console.log("move from " +frcoord +"to "+tocoord);
+ figure = map[frcoord];
+    showFigureAt(frcoord,'1');
+    showFigureAt(tocoord,figure);
+Move();
+	// MoveTouch();
+    if(get_cookie("table")>=0)
+        
+  connection.send("tabless;"+get_cookie("table")+";table;move;0;"+frcoord +";"+tocoord+";"+get_cookie("db")+";"+get_cookie("hash")); 
+   
+   
+}
+    function sendMes(){
+        var c  = document.getElementById("mestext").value;
+        if(c[0]==";"){
+            
+            connection.send("chat;com;"+get_cookie("db")+";"+get_cookie("hash")+""+c);
+        document.getElementById("mestext").value="";
+      
+            
+        }else{
+        connection.send("chat;text;"+c+";"+get_cookie("db")+";"+get_cookie("hash"));
+        document.getElementById("mestext").value="";
+        }
+    }
+function MoveTouch(){
+	if(Side!="none" && Side=="white"|| Side=="black"){
+			if(touch[1]!=null){
+				
+				  var tocoord = this.id.substring(1);
+				if(touch[1]!=tocoord){
+				 moveFigure(touch[1],tocoord);
+				touch[1]=null;}
+				else{
+					touch[1]=null;
+				}
+			}
+			else if(touch[1]==null){
+				var c = getChessFigureSide(boardfigureposition[Number(this.id.substr(1))],Side);
+				if(c==true){
+					touch[1]= this.id.substr(1);
+				}
+			}
+		
+	}
+}
+
+	 
+function done(e){
+    connection.send("tabless;"+get_cookie("table")+";board;Done;"+get_cookie("db")+";"+get_cookie("hash")+";true");
+    document.getElementById("ready").style="display: none;";
+	//document.getElementById("timer").style="display: none;";
+    document.getElementById("exit").style="display: block;";
+    
+    
+}
+    
+    var get = window
+    .location
+    .search
+    .replace('?','')
+    .split('&')
+    .reduce(
+        function(p,e){
+            var a = e.split('=');
+            p[ decodeURIComponent(a[0])] = decodeURIComponent(a[1]);
+            return p;
+        },
+        {}
+    );
+
+
+connection.onopen = function (e) {
+   console.log('Connected! '+e);
+    connection.send("auth;login;false;");
+	
+};
+
+// Log errors
+connection.onerror = function (error) {
+    console.log('WebSocket Error ' + error);
+};
+    function clear(){
+    
+    
+    document.getElementsByClassName("board")[0].innerHTML="";
+}
+ function create(){
+       
+	 var c = prompt ("Введите имя стола.(необязательное поле)");
+	 var b = prompt ("Введите ставку.(обязательно,минимум 5$,введите цифру)");
+	 if(Number(b)>3){
+	 connection.send("tables;create;"+c+";"+b+";"+get_cookie("db")+";"+get_cookie("hash"));
+	 }
+	 else{
+		 alert("Некорректно была введена ставка ,минимум 5$");
+	 }
+    }
+// Log messages from the server
+connection.onmessage = function (e) {
+    var b = e.data.split(";");
+	console.log(e.data);
+if(b[0]=="impotantMes"){
+	 	 if(b[1]=="0"){
+			 document.getElementById("status").innerHTML="Вам шах.";
+		 }else if(b[1]=="1"){
+			 document.getElementById("status").innerHTML="Вам мат.";
+			 
+		 }else if(b[1]=="2"){
+			 document.getElementById("status").innerHTML ="Не плохо,пат.";
+		 }else{
+var c= document.getElementById("status").innerHTML="";
+			
+}
+	 
+}
+     if(b[0]=="error"){
+		 if(b[1]=="toomany"){
+			 alert("На данном сервере слишком много игроков ,пожалуйста,выберите другой или подождите немного времени")
+		 }
+	 }
+    if(b[0] == "board"){
+        if(b[3-2]=="move"){
+              showFigure(''+b[2]);
+            boardfigureposition = b[2];
+             console.log(b[5]);
+			
+			if(b[5]!=null){
+				document.getElementById("s"+b[4]).innerHTML="<div class='last'>&#13;</div>";
+                		document.getElementById("s"+b[5]).innerHTML="<div class='end'>&#13;"+document.getElementById("s"+b[5]).innerHTML+"</div>";
+                
+                	//document.getElementById("s"+b[5]).innerHTML="&#10102";
+					//document.getElementById("s"+b[5]).style="background-color:green";
+			}
+			if(Side!=b[3]&&b[3]!="main" && b[3]!="test"){
+    Move();
+		//        var a = document.getElementById("timerGameEnemy").style="display:none";
+		//		var b  = document.getElementById("timerGameMy").style="display:block";
+		//			document.getElementById('times1').innerHTML = 60;
+		
+					
+		}else if(Side==b[3]){
+			//	var a  = document.getElementById("timerGameEnemy").style="display:block";
+			//	var b  = document.getElementById("timerGameMy").style="display:none";
+			//		document.getElementById('times').innerHTML = 60;
+			}else if(b[3]=="test"){
+				
+			}
+			else{
+			//	var a  = document.getElementById("timerGameEnemy").style="display:none";
+			//	var b  = document.getElementById("timerGameMy").style="display:none";
+		
+			}
+           
+			
+        }else if(b[1]=="name"){
+			//	 document.getElementById("EnemyPanel").innerHTML=""+b[2]+"<dt>"+b[3]+"$</dt>";
+				
+			
+			
+				 }
+		
+		else if(f[1] == "error"){
+            if(f[2]=="manypeople"){
+                alert("В данном столе уже достаточное количество игроков");
+            }else if(f[2] == "moneyneed"){
+				alert("Недостаточно средст на счету ,пожалуйста выберите другой.")
+			}
+        }
+  
+    }else if(b[0] == "account"){
+         if(b[3-2]=="money"){
+              var c = Number(b[2]);
+               document.getElementById("money").innerHTML=get_cookie("db")+"<dd>"+b[2]+"$</dd>";
+         
+        }
+    }
+    
+    else if(b[0] =="tablegame"){
+        
+        if(b[1]=="win"){
+            if(get_cookie("table")>=0){
+                alert("Вы победили "+b[2]+"$");
+            }
+        }else if(b[1]=="exitenemy"){
+			document.getElementById("EnemyPanel").innerHTML="";
+		}
+		else if(b[1]=="end"){
+            var c = Number(b[2]);
+             document.getElementById("ready").style="display: none;";
+            document.getElementById("board").style="display: none;";
+               document.getElementById("money").innerHTML=" "+b[2]+"$";
+         
+            document.getElementById("exit").style="display: none;";
+            document.getElementById("boardlistview").style="display: block;";
+        } else if(b[1]=="lose"){
+              alert("Вы проиграли "+b[2]+"$");
+        }
+	}
+
+  else if(b[0]=="position"){
+          if(b[3-2]== "board"){
+		//	    $('.block').on('click',MoveTouch);
+              var a = Number(b[2]);
+              if(a==0){
+                  clear();
+                 Side = "white";
+				  initBoard();
+                  showFigure(boardfigureposition);
+         
+				   Move();
+              }else if(a==1){
+                  clear();
+				  Side="black";
+                  initBlackBoard();
+                  showFigure(boardfigureposition);
+                  Move();
+				       }else{
+				  Side ="none";
+			  }
+			  
+			  	//document.getElementById('second').innerHTML = 16;
+			 // 	document.getElementById("timer").style="display: block;";
+  
+          }else if(b[1]=="boardreturn"){
+			      var a = Number(b[2]);
+              if(a==(0) ){
+                  clear();
+                 Side = "white";
+				  initBoard();
+                  showFigure(boardfigureposition);
+            //   $('.block').on('click',movet);
+	//			   $('.block').on('vclick',movet);
+				   Move();
+              }else if(a==1){
+                  clear();
+				  Side="black";
+                  initBlackBoard();
+                  showFigure(boardfigureposition);
+                  Move();
+		 // $('.block').on('click',movet);
+			//	     $('.block').on('vclick',movet);
+              }else{
+				  Side ="none";
+			  }
+			  
+			  	//document.getElementById('second').innerHTML = 16;
+			  	//document.getElementById("timer").style="display: none;";
+		  }
+          }
+    else if(b[0]=="chat"){
+        if(b[1]=="clear"){
+                 
+document.getElementById("textMessage").innerHTML="";
+   
+        }else if(b[1]=="reload"){
+            window.location.reload();
+        }else if(b[1]=="ban"){
+            alert("Вы временно отключены от чата!!!");
+            soundClick();
+        }else if(b[1]=="server"){
+       soundClick(); document.getElementById("textMessage").innerHTML=document.getElementById("textMessage").innerHTML+"<br/><span style='color:#3bd061;'>"+b[2]+"</span>";
+         document.getElementById("textMessage").scrollTop += 200;
+            
+    }
+        else{
+        onMessageChat(b[2],b[1]);
+        }
+    }
+    
+    else if(b[0] == "auth"){
+        if(b[1]=="login"){
+          if(b[2]=="true"){
+          //    alert("true");
+                var aaaa  = document.getElementById("user").value;
+                var bbbb  = document.getElementById("pass").value;
+  document.cookie="db="+aaaa;
+                document.cookie="hash="+bbbb;
+                document.getElementById("boardList").style="display: block;";
+                document.getElementById("auth").style="display: none;";
+               
+     document.getElementById("ready").style="display: none;";
+    document.getElementById("board").style="display: none;";
+    document.getElementById("exit").style="display: none;";
+  //  document.getElementById("Nickname").innerHTML=""+get_cookie("db");
+       
+            
+          }
+            else{
+              alert("Не правильное имя или пароль");
+				window.location.href(window.location.reload()+"?invalid=true");
+          }
+        
+  
+    }
+   
+    
+   }else if(b[0] == "tables"){
+        if(b[3-2]=="all"){
+           initBoardLists(b[2],b[6],b[5],b[7],b[3]);  
+        }else if(b[1]=="remove"){
+            var c =document.getElementById(""+b[2]);
+			if(c!=null)
+				c.remove();
+        }else if(b[3-2]=="upd"){
+            document.getElementById(""+b[2]).innerHTML="";
+            $('#'+b[2]).append(updates
+                       .replace('stavka',b[5])
+                        .replace('number',b[6])
+                       .replace('long',b[7]/60000)
+								 .replace('name',b[3])
+                                 .replace('joined',b[2]));
+        }
+	   else if(b[1]=="exit"){
+            document.getElementById("ready").style="display: none;";
+            document.getElementById("board").style="display: none;";
+            document.getElementById("exit").style="display: none;";
+		//   	document.getElementById("EnemyPanel").innerHTML="";
+	
+            document.getElementById("boardlistview").style="display: block;";
+    
+    
+    
+        }
+  
+    }else if(b[0] =="game"){
+			if(b[1]=="restart"){
+				document.getElementById("board").style="display:block";
+			}else if(b[1]=="enemyExit"){
+				
+			}
+				else if(b[1]=="removetimers"){
+				
+				
+			//	document.getElementById("timer").style="display:none";
+			}else if(b[1]=="gamestart"){
+				alert("Игра началась!");
+			}
+		else if(b[1]=="captcha"){
+				var i = Number(b[2]);
+				 document.cookie="capid="+i;
+				document.getElementById("captcha").style="display:block";
+					document.getElementById("auth").style="display:none";
+					document.getElementById("reg").style="display:none";
+				var code = '<img src="data:image/png;base64,'+b[3]+'">';
+				document.getElementById("imgcap").innerHTML=code;
+				
+				
+			}else if(b[1]=="outcap"){
+				alert("Время вышло,данная капча больше не действительна.")
+			}
+			else if(b[1]=="noncaptcha"){
+			alert("Капча введена неверно!");
+			}else if(b[1]=="limit"){
+				
+				alert("Лимит введения капчи исчерпан");
+				upd();
+			}else if(b[1]=="unvalid"){
+				if(b[2]=="login"){
+					alert("Неправильно введён логин! Mинимум 4 символа,максимум 10 символов");
+}else{
+	alert("Неправильно введён пароль! Mинимум 6 символов ,максимум 20,Пароль не должен состоять только из цифр");
+}
+			}
+	else if(b[1]=="register"){
+		if(b[2]=="true"){
+			alert("Вы успешно зарегестрировались");
+			upd();
+		}else{
+			alert("Выбранный вами логин уже занят");
+			upd();
+		}
+	}
+        else if(b[1]=="join"){
+          
+          document.cookie="table="+b[2];
+                    document.getElementById("boardlistview").style="display: none;";
+                document.getElementById("auth").style="display: none;";
+     document.getElementById("ready").style="display: block;";
+            document.getElementById("board").style="display: block;";
+            document.getElementById("exit").style="display: block;";
+    
+    
+        }else if(b[1]=="return"){
+			
+		 if(b[2]="boards"){
+				document.cookie="table="+b[3];
+				    document.getElementById("boardlistview").style="display: none;";
+                document.getElementById("auth").style="display: none;";
+     document.getElementById("board").style="display: block;";
+        //    document.getElementById("board").style="display: block;";
+   	  	document.getElementById("ready").style="display: none;";
+  
+             document.getElementById("exit").style="display: block;";
+   
+				
+			}
+		}else if(b[3-2]=="goodbye"){
+			    document.getElementById("ready").style="display: none;";
+            document.getElementById("board").style="display: none;";
+            document.getElementById("exit").style="display: none;";
+            document.getElementById("boardlistview").style="display: block;";
+    
+		}else if(b[1]=="trashboard"){
+			alert("Вы не можете создавать больше 3-ёх столов в течение 3-ёх минут")
+		}else if(b[3-2]=="tablelist"){
+			if(b[2]=="notfound"){
+					 var c =document.getElementById(""+b[3]);
+			c.remove();
+			alert("Стол был закрыт.");
+			}
+		}
+    }
+   //  console.log('Server: ' + e.data);
+    
+};
+
+function initBoard(){
+    for(var coord=63;coord>=0;coord--){
+       $('.board').append(divBlock
+                          .replace('$coord',coord)
+                          .replace('$color',isBlack(coord)?'black':'white'));
+       
+   }
+    
+}
+    function conf(){
+	let a = document.getElementById("cap").value;
+	if(a!=null){
+		connection.send("captcha;id;"+get_cookie("capid")+";"+a);
+	}
+}
+function moveFigure(frcoord,tocoord){
+  
+    console.log("move from " +frcoord +"to "+tocoord);
+ figure = map[frcoord];
+    showFigureAt(frcoord,'1');
+    showFigureAt(tocoord,figure);
+Move();
+	// MoveTouch();
+    if(get_cookie("table")>=0)
+        
+  connection.send("tabless;"+get_cookie("table")+";table;move;0;"+frcoord +";"+tocoord+";"+get_cookie("db")+";"+get_cookie("hash")); 
+   
+   
+}
+    
+    function auth(e){
+    var a  = document.getElementById("user").value;
+     var b  = document.getElementById("pass").value;
+      
+       
+    connection.send("auth;login;true;"+a+";"+b);
+    
+            
+}
+    
+function Move(){
+    $('.figure').draggable();
+	
+    var c = document.getElementsByClassName("block");
+	for(let i=0;i<c.length;i++){
+c[i].addEventListener("touchstart",MoveTouch,false);
+}
+}
+    var a = 0;
+     function initBoardLists(cool,number,stavcka,time,name){
+       $('#boardlistview').append(boardi.replace('sid',cool)
+                       .replace('stavka',stavcka)
+                        .replace('number',number)
+                       .replace('long',time/60000)
+								 .replace('name',name)
+                                 .replace('joined',cool));
+       
+   
+}
+function upd(){
+	if(a==0){
+		a=1;
+		document.getElementById("auth").style="display:none";
+	document.getElementById("reg").style="display:block";
+			document.getElementById("captcha").style="display:none";
+	}else{
+		a=0;
+	document.getElementById("auth").style="display:block";
+	document.getElementById("reg").style="display:none";
+		document.getElementById("captcha").style="display:none;";
+	}
+}
+    function reg(){
+	var a = document.getElementById("reguser").value;
+	var b = document.getElementById("regpass").value;
+	if(a!=null && b!=null){
+		connection.send("register;"+a+";"+b);
+	}
+	
+}
+function stop(){
+    $('.block').droppable({
+        drop:function(event,ui){
+           
+            var frcoord =ui.draggable.attr("id").substring(3-2);
+            var tocoord = this.id.substring(3-2);
+             moveFigure(frcoord,tocoord);
+        }
+    });
+}
+function showFigure(figures){
+    for(var coord=0;coord<64;coord++){
+    showFigureAt(coord,figures.charAt(coord));
+    }
+}
+    function exit(e){
+connection.send("tabless;"+get_cookie("table")+";removeuser;"+get_cookie("db")+";"+get_cookie("hash"));
+}
+function getChessSymbol(figure){
+    switch(figure){
+             case 'K':return '&#9812;';
+             case 'Q':return '&#9813;';
+             case 'R':return '&#9814;';
+             case 'B':return '&#9815;';
+             case 'N':return '&#9816;';
+             case 'P':return '&#9817;';
+             case 'k':return '&#9818;';
+             case 'q':return '&#9819;';
+             case 'r':return '&#9820;';
+             case 'b':return '&#9821;';
+             case 'n':return '&#9822;';
+             case 'p':return '&#9823;';  
+			case 'left':return '&#8592;'; 
+			case 'right':return '&#8594;'; 
+				case 'up':return '&#8593;'; 
+				case 'down':return '&#8595;'; 
+		default:return '&#13;';
+    }
+}
+function showFigureAt(coord,figure){
+    map[coord] = figure;
+    $('#s'+coord).html(divFigure
+                      .replace('$coord',coord)
+                      .replace('$figure',getChessSymbol(figure)));
+    stop();
+}
+function isBlack(coord){
+    return (coord % 8 + Math.floor(coord/8))%2;//математическая фунция для определения черной клетки и новой строки
+}
+     function onMessageChat(message,name){
+       // var c  = document.getElementById("textMessage");
+       if(name!=get_cookie("db")) soundClick();
+document.getElementById("textMessage").innerHTML=document.getElementById("textMessage").innerHTML+"<br/><a style='color:green'>&#13;"+name+"</a>: "+message;
+         document.getElementById("textMessage").scrollTop += 200;
+    }
+
+</script>
+	
+	<div id="boardList" style="display: none;">
+    <div id="panelGame"><div class="box1" style=" width:  8%;height: 80%;"><img  class='tes' style='border: 3px solid  #55cdef;border-radius: 50%;margin-left: 0.8%;' src="https://dwstroy.ru/lessons/les3373/demo/img/men.png" width="75%"></div>
+        <div class="box1" id = "money" style="width: 15%;height: 80%;color: white;font-size: 100%;margin-top: 1.5%;">Null<dd>0$</dd></div>
+     <div class="box1" style="width: 45%;height: 80%;color: white;font-size: 100%;margin-top: 2.5%;float: right;justify-content: right;display: flex;">&#13;</div>
+   <div class="createtable" style="margin-top: 1.87%; margin-left: 20%; display: flex;align-items: center;" onClick="create()" >Создать стол</div>
+    <div class="box1" id="exitB" style="margin-left: 1%; width: 5%;height: 100%;color: white;font-size: 100%;margin-top: 2%;justify-content: center;display: flex;border-radius: 10px 10px 10px 10px;">EXIT</div>
+        </div>
+        <div id = "boardlistview">
+        &#13;
+            
+        </div>
+        
+        <div id="chat" style="">
+    <div id="textMessage" >
+  
+    </div>
+    <input style="margin-left: 4%;margin-top: 4%;height: 3%; width: 55%;margin-bottom: 4%;" id="mestext" type="text" placeholder="Введите текст..." maxlength="300" autofocus><button onClick="sendMes()">Отправить</button>
+    </div>
+    
+    </div>
+    <div id="board" style="display:none;">
+	<div class="board" style="top:2%;"></div>
+        <button id="ready" class="dws-submitready" onClick="done(this); return true;">Готов.</button>
+        <button id="exit" class="exits2" onClick="exit(this); return true;">Выход</button>
+    </div>
+    
+         <div id="auth" >
+        <div class="container" >
+    <img  class="tes" src="https://dwstroy.ru/lessons/les3373/demo/img/men.png">
+            <br/>
+            <a href="#"> #ЛУЧШЕДОМА</a>
+            <br/>
+            <div class="dws-input">
+        
+            <input type="text" id="user" name="username"  placeholder="логин">
+        </div>
+        <div class="dws-input">
+            <input type="password" id="pass" name="password"  placeholder="Пароль">
+        </div>
+            <button class="dws-submit"  onClick="auth(this); return false;" >Войти</button><br />
+        <a href="#" onClick="upd()">Зарегестрироваться</a>
+   
+            <br/>
+            2020&copy;
+</div>
+       
+      
+        </div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		 <div id="reg" style="display:none;">
+        <div class="container" >
+    <img  class="tes" src="https://dwstroy.ru/lessons/les3373/demo/img/men.png">
+            <br/>
+            <a href="#"> #ЛУЧШЕДОМА</a>
+            <br/>
+            <div class="dws-input">
+        
+            <input type="text" id="reguser" name="username"  placeholder="Придумайте логин">
+        </div>
+        <div class="dws-input">
+            <input type="password" id="regpass" name="password"  placeholder="Придумайте пароль">
+        </div>
+            <button class="dws-submit"  onClick="reg(); return false;" >Регистрация</button><br />
+        <a href="#" onClick="upd()">Войти</a>
+   
+  
+            <br/>
+               2020&copy;
+</div>
+       
+      
+        </div>
+     
+		
+		
+		
+		
+		
+			 <div id="captcha" style="display:none;">
+        <div class="container" >
+    <img  class="tes" src="https://dwstroy.ru/lessons/les3373/demo/img/men.png">
+            <br/>
+            <a href="#"> #ЛУЧШЕДОМА</a>
+            <br/>
+            <div class="dws-input">
+        
+            <input type="number" id="cap" name="username"  placeholder="Введите число">
+				<br>
+				<div id="imgcap"></div>
+        </div>
+       
+            <button class="dws-submit"  onClick="conf(); return false;" >Ввести</button><br />
+       
+   
+
+            <br/>
+            
+</div>
+       
+      
+        </div>
+     
+       
+    
+    <script>
+    	
+      document.getElementById("mestext").focus();
+
+  //  for(var a = 0;a<200;a++)
+//        onMessageChat("test message for server from all players and java js","Anton");</script>
+</body>
+</html>
